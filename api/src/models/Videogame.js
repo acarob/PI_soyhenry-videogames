@@ -19,7 +19,7 @@ module.exports = (sequelize) => {
       allowNull: false,
     },
     release: {
-      type: DataTypes.DATEONLY,
+      type: DataTypes.STRING,
     },
     rating: {
       type: DataTypes.FLOAT,
@@ -28,5 +28,12 @@ module.exports = (sequelize) => {
       type: DataTypes.ARRAY(DataTypes.STRING),
       allowNull: false,
     },
+    img : {
+      type: DataTypes.STRING,
+      allowNull: false
+    }
+  },
+  {
+    timestamps: false
   });
 };
