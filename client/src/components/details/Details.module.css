@@ -1,0 +1,29 @@
+.details img {
+    margin-top: 10px;
+    width: 50%;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 0 30px #9b01e2;
+}
+
+.details {
+    background-image: url(https://w0.peakpx.com/wallpaper/312/129/HD-wallpaper-light-purple-hexagons-black-background-abstract.jpg);
+    padding: 1rem;
+}
+
+.details p {
+    color: white;
+    text-align: justify;
+}
+
+.details h4 {
+    color: white;
+}
+
+.details h3 {
+    color: white;
+}
+
+.details h1 {
+    color: white;
+}

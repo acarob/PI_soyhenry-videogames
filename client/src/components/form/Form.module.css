@@ -1,0 +1,13 @@
+.form {
+    background-image: url(https://fondosmil.com/fondo/26582.jpg);
+    background-size: cover;
+    height: 100vh;
+}
+
+.form button:hover {
+    cursor: pointer;
+}
+
+.list {
+    list-style: square;
+}

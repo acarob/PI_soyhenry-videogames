@@ -2,8 +2,8 @@ import './App.css';
 import { Route } from 'react-router-dom';
 import Home from './components/home/Home';
 import Form from './components/form/Form';
-import Navbar from './components/navbar/Navbar';
 import LandingPage from './components/landingPage/LandingPage';
+import Details from './components/details/Details';
 
 function App() {
   return (
@@ -12,12 +12,12 @@ function App() {
         <LandingPage/>
       </Route>
       <Route path="/home">
-        <Navbar/>
         <Home/>
       </Route>
       <Route path="/create">
         <Form/>
       </Route>
+      <Route path={"/videogame/:id"} component={Details}/>
     </div>
   );
 }

@@ -1,0 +1,23 @@
+.numbers {
+    display: inline-block;
+}
+
+.numbers ul {
+    /* justify-content: space-between; */
+    /* display: inline-block; */
+    justify-content: space-between;
+    width: 100%;
+    color: white;
+    background-color: blue;
+    list-style: none;
+}
+
+.number ul:hover {
+    cursor: pointer;
+}
+
+/* style={{ display: "inline-block" }} */
+
+/* style={{
+    listStyle: "none",
+    display: "inline"}} */

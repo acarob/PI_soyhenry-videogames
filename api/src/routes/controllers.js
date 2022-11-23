@@ -1,7 +1,6 @@
 require('dotenv').config();
-const { YOUR_API_KEY } = process.env;
+const { YOUR_API_KEY_2 } = process.env;
 const axios = require('axios');
-const e = require('express');
 const { Videogame, Genre } = require('../db.js');
 
 const getHome = async () => {
@@ -10,13 +9,13 @@ const getHome = async () => {
         for(let i=1; i<=5; i++){
             urls = [
                 ...urls,
-                `https://api.rawg.io/api/games?key=${YOUR_API_KEY}&page=${i}`
+                `https://api.rawg.io/api/games?key=${YOUR_API_KEY_2}&page=${i}`
             ]
         }
         let api = urls.map((e) => axios.get(e));
-    
+
         api = await Promise.all(api);
-    
+
         api = api?.map((e) => e.data.results).flat();
     
         api = api?.map((e) => {
@@ -30,7 +29,7 @@ const getHome = async () => {
                 rating: e.rating,
             };
         });
-    
+        
         let videogamesDb = await Videogame.findAll({
             include: {
               model: Genre,
@@ -51,6 +50,7 @@ const getHome = async () => {
               img: e.img,
               rating: e.rating,
               description: e.description,
+              createdDb: e.createdDb
             };
           });
       
@@ -64,7 +64,7 @@ const getHome = async () => {
 }
 
 const getVideogamesByName = async (name) => {
-  let gamesByName = await axios.get(`https://api.rawg.io/api/games?search=${name}&key=${YOUR_API_KEY}`)
+  let gamesByName = await axios.get(`https://api.rawg.io/api/games?search=${name}&key=${YOUR_API_KEY_2}`)
   gamesByName = gamesByName.data.results;
   if (gamesByName.length){
     gamesByName = gamesByName.splice(0, 15);
@@ -84,7 +84,11 @@ const getVideogamesByName = async (name) => {
 }
 
 const getVideogamesById = async (id) => {
-  let gamesById = await axios.get(`https://api.rawg.io/api/games/${id}?key=${YOUR_API_KEY}`)
+  if (id.includes('-')){
+    const found = await Videogame.findByPk(id);
+    return found;
+  }else {
+  let gamesById = await axios.get(`https://api.rawg.io/api/games/${id}?key=${YOUR_API_KEY_2}`)
   gamesById = gamesById.data;
   const gameDone = {
       id: gamesById.id,
@@ -97,10 +101,11 @@ const getVideogamesById = async (id) => {
       description: gamesById.description
     };
   return gameDone;
+  }
 }
 
 const getGenres = async () => {
-  let genres = await axios.get(`https://api.rawg.io/api/genres?key=${YOUR_API_KEY}`)
+  let genres = await axios.get(`https://api.rawg.io/api/genres?key=${YOUR_API_KEY_2}`)
   genres = genres.data.results;
   genres = genres.map((e) => {
     return {
