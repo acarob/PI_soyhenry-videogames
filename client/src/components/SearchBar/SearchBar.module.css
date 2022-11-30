@@ -1,7 +1,18 @@
 .search input {
     border-radius: 5px;
+    outline: none;
+    border: 1px solid silver;
+    border-radius: 30px;
 }
 
-.btn {
-    border-radius: 5px;
+.search button {
+    border-radius: 30px;
+    border: 1px solid silver;
+}
+
+.search button:hover{
+    cursor: pointer;
+    background-color: #9b01e27e;
+    box-shadow: 0 0 30px #9b01e2;
+    border: 1px solid #9b01e27e;
 }

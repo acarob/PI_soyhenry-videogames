@@ -157,7 +157,7 @@ const Form = () =>  {
                     onChange={(e)=>handleChange(e)}
                     />
                 </div>
-                <div className={styles.platforms}>
+                <div>
                     <label>Platforms: </label>
                     <select onChange={(e) => handleSelect2(e)}>
                         {plat.map((e) => (
@@ -167,7 +167,7 @@ const Form = () =>  {
                     {/* <ul>{input.platforms.map(el => el)}</ul> */}
                     {input.platforms.map(el =>
                 <div className="divPla">
-                    <p>{el}</p>
+                    <p className={styles.list}>{el}</p>
                     <button className="botonX" onClick={(e) => handleDeletePlatforms(el)}>X</button>
                 </div>
                 )}
@@ -182,7 +182,7 @@ const Form = () =>  {
                     {/* <ul>{input.genres.map(el => el)}</ul> */}
                    {input.genres.map(el =>
                     <div className="divGen">
-                        <p>{el}</p>
+                        <p className={styles.list}>{el}</p>
                         <button className="botonX" onClick={(e) => handleDeleteGenres(el)}>X</button>
                     </div>
                     )}

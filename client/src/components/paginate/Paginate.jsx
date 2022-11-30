@@ -12,7 +12,7 @@ const Paginate = ({videogamesPerPage, allVideogames, paginate}) => {
             <ul>
                 {pageNumber &&
                 pageNumber.map(number => (
-                    <a onClick={() => paginate(number)}>{number}</a>
+                    <li><a onClick={() => paginate(number)}>{number}</a></li>
                 ))}
             </ul>
             </div>

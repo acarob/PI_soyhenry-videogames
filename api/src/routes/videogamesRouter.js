@@ -21,7 +21,7 @@ router.get('/', async (req, res) => {
 router.post('/', async (req, res) => {
     try {
         let { name, description, release, rating, platforms, genres, img } = req.body;
-        // if (!img || img==="") img = "https://images.unsplash.com/photo-1526047932273-341f2a7631f9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bG92ZSUyMGZsb3dlcnN8ZW58MHx8MHx8&w=1000&q=80"
+        if (!img || img==="") img = "https://images.unsplash.com/photo-1526047932273-341f2a7631f9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bG92ZSUyMGZsb3dlcnN8ZW58MHx8MHx8&w=1000&q=80"
         let game = await Videogame.create({ name, description, release, rating, platforms, img });
         let db = await Genre.findAll({
             where: {

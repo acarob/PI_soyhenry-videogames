@@ -1,23 +1,29 @@
-.numbers {
-    display: inline-block;
-}
-
-.numbers ul {
-    /* justify-content: space-between; */
-    /* display: inline-block; */
-    justify-content: space-between;
-    width: 100%;
+/* .numbers ul {
     color: white;
-    background-color: blue;
     list-style: none;
+    background-color: blue;
+} */
+.numbers ul {
+    list-style: none;
+    text-align: center;
 }
 
-.number ul:hover {
+.numbers ul li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.numbers ul a {
+    display: block;
+    padding: 10px 20px;
+    color: white;
+    background: #9b01e27e;
+    border-radius: 4px;
+    box-shadow: 0 0 20px #9b01e2;
+}
+
+.numbers ul a:hover {
     cursor: pointer;
+    box-shadow: 0 0 20px #55ffe3;
+    background: #55ffe385;
 }
-
-/* style={{ display: "inline-block" }} */
-
-/* style={{
-    listStyle: "none",
-    display: "inline"}} */
