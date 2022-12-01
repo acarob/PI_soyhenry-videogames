@@ -1,10 +1,52 @@
-.form {
+body {
     background-image: url(https://fondosmil.com/fondo/26582.jpg);
     background-size: cover;
     height: 100vh;
 }
 
+.form h3 {
+    color:white;
+    text-shadow: 0 0 6px white;
+}
+
+.form form {
+    width: 300px;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.516);
+    padding: 10px;
+    color: rgb(251, 0, 255);
+    border-radius: 6px;
+}
+
+.form input {
+    outline: none;
+    border: solid 1px rgb(218, 7, 237);
+    border-radius: 4px;
+    /* width: 200px; */
+}
+
+.form input:focus {
+    border-color: aqua;
+}
+
+.form textarea {
+    outline: none;
+    border: solid 1px rgb(218, 7, 237);
+    border-radius: 4px;
+    margin-top: 8px;
+}
+
+.form textarea:focus {
+    border-color: aqua;
+}
+
+.form select {
+    border: solid 1px rgb(218, 7, 237);
+    border-radius: 4px;
+}
+
 .form button {
+    color: rgb(218, 7, 237);
     margin-top: 20px;
     border-radius: 4px;
     border-color: silver;
